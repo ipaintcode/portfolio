@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+[class*="col-"] {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Non-mobile, grid */
+@media (min-width: 768px) {
+  .col-1 {width: 8.2%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+.links, .skills {
+  list-style: none;
+}
+
+.links li, .skills li {
+  display: inline-block;
+}
+
+.bio, .portrait {
+  display: inline-block;
+}
+
+.bio {
+  outline: 2px solid red;
+}
+
+.portrait {
+  float: right;
+}
+
+footer {
+  font-size: 9px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+}
+
+footer p {
+  margin-bottom: 0px;
+}
+
+/* Development */
+section {
+  outline: 1px solid black;
+}
