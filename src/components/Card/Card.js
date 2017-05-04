@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
@@ -8,32 +9,41 @@ class Card extends Component {
     this.state = {
       desc: '',
       url: '',
-
+      topics: [],
     };
   }
 
   componentWillMount() {
-    fetch(`https://api.github.com/repos/gilmoreg/${this.props.repo}`)
+    fetch(`https://api.github.com/repos/gilmoreg/${this.props.repo}`, {
+      headers: {
+        Accept: 'application/vnd.github.mercy-preview+json',
+      },
+    })
     .then(res => res.json())
     .then((res) => {
       const fields = {};
-      if (res && res.html_url) fields.url = res.html_url;
-      if (res && res.description) fields.description = res.description;
-      this.setState(fields);
+      if (res) {
+        console.log(`${this.props.repo}`, res);
+        if (res.html_url) fields.url = res.html_url;
+        if (res.description) fields.description = res.description;
+        if (res.topics) fields.topics = res.topics;
+        this.setState(fields);
+      }
     });
   }
 
   render() {
     return (
-      <section className="Card col-2">
-        <div>{this.props.repo}</div>
+      <section className="Card col-5">
+        <div className="card-title">{this.props.repo}</div>
         <img width="80%" height="100" src="" alt={this.props.repo} />
         <div id={`${this.props.repo}-description`}>
+          {this.state.topics}
           {this.state.description}
         </div>
         <ul>
-          <li><a target="_blank" rel="noopener noreferrer" href={`http://${this.props.repo}.gilmoreg.com`}>Demo</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href={this.state.url}>Repo</a></li>
+          <li><i className="fa fa-external-link" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={`http://${this.props.repo}.gilmoreg.com`}>Demo</a></li>
+          <li><i className="fa fa-github" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={this.state.url}>Repo</a></li>
         </ul>
       </section>
     );

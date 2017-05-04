@@ -30,6 +30,7 @@
 
 .links li, .skills li {
   display: inline-block;
+  margin: 5px;
 }
 
 .bio, .portrait {
