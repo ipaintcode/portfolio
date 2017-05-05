@@ -7,7 +7,7 @@ class Portfolio extends Component {
   render() {
     return (
       <section className="Portfolio">
-        <Preview />
+        <Preview repo={'condictor'} />
         <section className="cards">
           <Card repo={'condictor'} />
           <Card repo={'referendus'} />
