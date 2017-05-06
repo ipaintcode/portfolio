@@ -39,7 +39,7 @@ class Card extends Component {
     }
 
     return (
-      <section className="Card col-3">
+      <section className="Card col-5">
         <div className="card-title">{this.props.repo}</div>
         <img width="80%" height="100" src="" alt={this.props.repo} />
         {topics}
