@@ -33,7 +33,7 @@ class Portfolio extends Component {
     super(props);
     this.state = {
       repos: [],
-      selected: 2,
+      selected: -1,
     };
     this.selectCard = this.selectCard.bind(this);
   }
@@ -60,24 +60,31 @@ class Portfolio extends Component {
         });
       }
     });
-   /*
-   Card `https://api.github.com/repos/gilmoreg/${this.props.repo}`
-   Preview `https://kjhv7b3x01.execute-api.us-east-1.amazonaws.com/production/fetchRepo?repo=${this.props.repo}
-   */
   }
 
   selectCard(e) {
     e.preventDefault();
+    const repo = e.target.dataset.repo;
+    const index = this.state.repos.findIndex(r => (r.name === repo));
+    if (index >= 0) this.setState({ selected: index });
   }
 
   render() {
     const children = this.state.repos.map((repo) => {
       const { name, topics, description } = repo;
-      return <Card key={name} repo={name} topics={topics} description={description} click={this.selectCard} />;
+      return (
+        <Card
+          key={name}
+          repo={name}
+          topics={topics}
+          description={description}
+          click={this.selectCard}
+
+        />);
     });
 
     let preview = null;
-    if (this.state.selected && this.state.repos.length) {
+    if ((this.state.selected >= 0) && this.state.repos.length) {
       const repo = this.state.repos[this.state.selected];
       preview = <Preview key={`${repo.name}-preview`} repo={repo} />;
     }
@@ -87,7 +94,7 @@ class Portfolio extends Component {
         <section className="cards">
           {children[0]}
           {children[1]}
-          {this.state.selected ? preview : ''}
+          {(this.state.selected >= 0) ? preview : ''}
           {children[2]}
           {children[3]}
         </section>

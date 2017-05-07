@@ -14,3 +14,7 @@
   display: block;
   margin: 0 auto;
 }
+
+.Card button {
+  margin-top: 20px;
+}
