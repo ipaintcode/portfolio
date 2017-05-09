@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Preview from './Preview/Preview';
 import Card from './Card/Card';
+import base from '../base';
 import './Portfolio.css';
 
 const fetchGithubRepo = repo =>
@@ -17,22 +18,12 @@ const fetchGithubRepo = repo =>
   }))
   .catch(err => new Error(err));
 
-const fetchPreview = repo =>
-  fetch(`https://kjhv7b3x01.execute-api.us-east-1.amazonaws.com/production/fetchRepo?repo=${repo}`)
-    .then(res => res.json())
-    .then(res => JSON.parse(res.body)[0])
-    .then(res => ({
-      name: repo,
-      screenshots: res.screenshots,
-      blog: res.blog,
-    }))
-    .catch(err => new Error(err));
-
 class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
       repos: [],
+      github: [],
       selected: -1,
     };
     this.selectCard = this.selectCard.bind(this);
@@ -43,23 +34,16 @@ class Portfolio extends Component {
     const repos = repoNames.map(repo => fetchGithubRepo(repo));
     Promise.all(repos)
     .then((res) => {
-      this.setState({ repos: res });
+      this.setState({ github: res });
     });
-    const previews = repoNames.map(repo => fetchPreview(repo));
-    Promise.all(previews)
-    .then((res) => {
-      if (res) {
-        res.forEach((repoPreview) => {
-          const reposCopy = this.state.repos;
-          const index = reposCopy.findIndex(r => (r.name === repoPreview.name));
-          if (index >= 0) {
-            reposCopy[index].screenshots = repoPreview.screenshots;
-            reposCopy[index].blog = repoPreview.blog;
-          }
-          this.setState({ repos: reposCopy });
-        });
-      }
+    this.ref = base.syncState('/repos', {
+      context: this,
+      state: 'repos',
     });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   selectCard(e) {
@@ -70,23 +54,31 @@ class Portfolio extends Component {
   }
 
   render() {
-    const children = this.state.repos.map((repo) => {
-      const { name, topics, description } = repo;
-      return (
-        <Card
-          key={name}
-          repo={name}
-          topics={topics}
-          description={description}
-          click={this.selectCard}
-
-        />);
-    });
+    let children = [];
+    if (this.state.repos.length) {
+      children = this.state.repos.map((repo) => {
+        const github = this.state.github.find(gh => (gh.name === repo.name));
+        // console.log('github', github);
+        return (
+          <Card
+            key={repo.name}
+            repo={repo.name}
+            screenshot={repo.cardImage}
+            topics={github.topics}
+            description={github.description}
+            click={this.selectCard}
+          />);
+      });
+    }
 
     let preview = null;
     if ((this.state.selected >= 0) && this.state.repos.length) {
-      const repo = this.state.repos[this.state.selected];
-      preview = <Preview key={`${repo.name}-preview`} repo={repo} />;
+      const github = this.state.github.find(gh =>
+        (gh.name === this.state.repos[this.state.selected].name),
+      );
+      const repo = Object.assign({}, this.state.repos[this.state.selected], github);
+      console.log('repo', repo);
+      preview = <Preview repo={repo} />;
     }
 
     return (

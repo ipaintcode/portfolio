@@ -1,32 +1,31 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Topic from './Topic';
 import './Card.css';
 
-class Card extends Component {
-  render() {
-    let topics = [];
-    if (this.props.topics.length) {
-      topics = this.props.topics.map(t => <Topic topic={t} key={t} />);
-    }
-
-    return (
-      <section className="Card col-5">
-        <div className="card-title">{this.props.repo}</div>
-        <img width="80%" height="100" src="" alt={this.props.repo} />
-        {topics}
-        <div id={`${this.props.repo}-description`}>
-          {this.props.description}
-        </div>
-        <button data-repo={this.props.repo} onClick={this.props.click}>Click me</button>
-      </section>
-    );
+const Card = (props) => {
+  let topics = [];
+  // console.log('Card', props);
+  if (props.topics.length) {
+    topics = props.topics.map(t => <span key={t}>{t} </span>);
   }
-}
+
+  return (
+    <section className="Card col-5">
+      <img src={props.screenshot} alt={props.repo} />
+      <div className="card-title">{props.repo.toUpperCase()}</div>
+      <div id={`${props.repo}-description`} className="description">
+        {props.description}
+      </div>
+      <span>Technologies: </span>{topics}
+      <button data-repo={props.repo} onClick={props.click}>Project Details</button>
+    </section>
+  );
+};
 
 Card.propTypes = {
   repo: PropTypes.string,
+  screenshot: PropTypes.string,
   topics: PropTypes.arrayOf(PropTypes.string),
   description: PropTypes.string,
   click: PropTypes.func,
@@ -34,6 +33,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
   repo: '',
+  screenshot: '',
   topics: [],
   description: '',
   click: () => ({}),

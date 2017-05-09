@@ -6,38 +6,41 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="%PUBLIC_URL%/index.css" />
     <title>Grayson Gilmore - Portfolio - </title>
   </head>
   <body>
     <nav>
-      <h1>Grayson Gilmore</h1>
-      <h4>Fullstack Web Developer</h4>
+      <img src="http://res.cloudinary.com/dk85nueap/image/upload/c_scale,w_64/v1494204179/18176333_qmdmgg.jpg" width="64" height="64" alt="Grayson Gilmore">
+      <div class="name">
+        <h1>GRAYSON GILMORE</h1>
+        <h4>Fullstack Web Developer</h4>
+      </div>
+      <ul class="links">
+        <li><i class="fa fa-github" aria-hidden="true"></i> <a target="_blank" rel="noopener noreferrer" href="https://github.com/gilmoreg"></a></li>
+        <li><i class="fa fa-linkedin" aria-hidden="true"></i> <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/graysongilmore/"></a></li>
+        <li>Resume</li>
+      </ul>
     </nav>
     <main>
       <section id="root"></section>
-      <section class="info col-9">
-        <ul class="links">
-          <li><i class="fa fa-github" aria-hidden="true"></i> <a target="_blank" rel="noopener noreferrer" href="https://github.com/gilmoreg">Github</a></li>
-          <li><i class="fa fa-linkedin" aria-hidden="true"></i> <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/graysongilmore/">LinkedIn</a></li>
-          <li>Resume</li>
-        </ul>
-        <section class="skills">
-          <h4>Skills:</h4>
-          <ul class="skills-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Node</li>
-          </ul>
+      <section class="profile">
+        <section class="info col-9">
+          <section class="skills">
+            <h4>SKILLS</h4>
+            <p>Server side: NodeJS, Express, MongoDB, Passport, GraphQL, Serverless Framework, AWS Lambda</p>
+            <p>DevOps: Docker, Heroku, Travis-CI, Jest, Mocha, Chai</p>
+            <p>Frontend: React, Redux, JQuery, Bootstrap</p>
+          </section>
+          <section class="bio">
+            <h4>ABOUT</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </section>
+          <p class="footer">&copy; 2017 by Grayson Gilmore. All rights reserved.</p>
         </section>
-        <section class="bio">
-          About me
-        </section>
+        <section class="portrait col-3"><img src="http://res.cloudinary.com/dk85nueap/image/upload/c_scale,w_300/v1494123055/18176333_xumjx9.jpg" alt="Portrait" width="100%" /></section>
       </section>
-      <section class="portrait col-3"><img src="http://res.cloudinary.com/dk85nueap/image/upload/c_scale,w_300/v1494123055/18176333_xumjx9.jpg" alt="Portrait" height="300" width="100%" /></section>
     </main>
-    <footer>
-      <p>Ⓒ 2017 by Grayson Gilmore. All rights reserved.</p>
-    </footer>
   </body>
 </html>

@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "prop-types": "^15.5.8",
+    "re-base": "^2.7.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-markdown": "^2.5.0",

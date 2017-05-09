@@ -6,15 +6,16 @@ import './Preview.css';
 
 const Preview = (props) => {
   let screenshots = [];
+  console.log('Preview repo', props.repo);
   if (props.repo.screenshots) {
     screenshots = props.repo.screenshots.map(ss =>
-      <img src={ss.screenshot} alt={props.repo.name} key={ss.screenshot} width="600" />);
+      <img key={`${Math.random()}`} src={ss} alt={props.repo.name} width="600" />);
   }
 
   let paragraphs = [];
   if (props.repo.blog) {
     paragraphs = props.repo.blog.map(bp =>
-      <ReactMarkdown source={bp.paragraph || ''} key={bp._id} />,
+      <ReactMarkdown source={bp || ''} key={`${Math.random()}`} />,
     );
   }
 
