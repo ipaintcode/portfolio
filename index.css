@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+[class*="col-"] {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Non-mobile, grid */
+@media (min-width: 768px) {
+  .col-1 {width: 8.2%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+body {
+  background-color: #DEDEDE;
+}
+
+nav {
+  margin-left: 20px;
+}
+
+nav img {
+  border-radius: 50%;
+  display: inline-block;
+  margin: 6px;
+}
+
+nav .name {
+  display: inline-block;
+  position: relative;
+  top: -1em;
+}
+
+nav h1 {
+  color: #657075;
+  font-size: 24px;
+}
+
+nav h4 {
+  margin: 0;
+  color: #A7ACAE;
+  font-size: 14px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.links {
+  float: right;
+  list-style: none;
+}
+
+.links li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.skills {
+  font-size: 14px;
+}
+
+.profile {
+  background-color: #D2D3D3;
+  margin: 10px;
+  display: inline-block;
+}
+
+.profile p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.info {
+  padding-left: 20px;
+}
+
+.bio, .portrait {
+  display: inline-block;
+}
+
+.bio {
+  font-size: 14px;
+}
+
+.portrait {
+  float: right;
+}
+
+.footer {
+  font-size: 9px;
+  margin-top: 2em !important;
+}
+
+/* Development 
+section {
+  outline: 1px solid black;
+} */
