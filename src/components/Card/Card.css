@@ -25,9 +25,19 @@
   font-size: 16px;
 }
 
-.Card span {
-  font-size: 10px;
+.Card ul {
+  list-style: none;
+  padding-left: 10px;
 }
+
+.Card li {
+  font-size: 9px;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #e0e0e0;
+  padding: 3px;
+}
+
 
 .Card button {
   margin-top: 20px;

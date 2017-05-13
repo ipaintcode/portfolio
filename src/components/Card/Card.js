@@ -6,8 +6,8 @@ import './Card.css';
 const Card = (props) => {
   let topics = [];
   // console.log('Card', props);
-  if (props.topics.length) {
-    topics = props.topics.map(t => <span key={t}>{t} </span>);
+  if (props.topics && props.topics.length) {
+    topics = props.topics.map(t => <li key={t}>{t.toUpperCase()}</li>);
   }
 
   return (
@@ -17,7 +17,9 @@ const Card = (props) => {
       <div id={`${props.repo}-description`} className="description">
         {props.description}
       </div>
-      <span>Technologies: </span>{topics}
+      <ul className="topics-list">
+        {topics}
+      </ul>
       <button data-repo={props.repo} onClick={props.click}>Project Details</button>
     </section>
   );

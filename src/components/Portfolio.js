@@ -30,7 +30,7 @@ class Portfolio extends Component {
   }
 
   componentWillMount() {
-    const repoNames = ['condictor', 'steam-battle', 'referendus', 'anikunchan'];
+    const repoNames = ['referendus', 'condictor', 'steam-battle', 'anikunchan'];
     const repos = repoNames.map(repo => fetchGithubRepo(repo));
     Promise.all(repos)
     .then((res) => {
@@ -58,14 +58,13 @@ class Portfolio extends Component {
     if (this.state.repos.length) {
       children = this.state.repos.map((repo) => {
         const github = this.state.github.find(gh => (gh.name === repo.name));
-        // console.log('github', github);
         return (
           <Card
             key={repo.name}
             repo={repo.name}
             screenshot={repo.cardImage}
-            topics={github.topics}
-            description={github.description}
+            topics={github ? github.topics : []}
+            description={github ? github.description : []}
             click={this.selectCard}
           />);
       });
@@ -77,7 +76,6 @@ class Portfolio extends Component {
         (gh.name === this.state.repos[this.state.selected].name),
       );
       const repo = Object.assign({}, this.state.repos[this.state.selected], github);
-      console.log('repo', repo);
       preview = <Preview repo={repo} />;
     }
 
