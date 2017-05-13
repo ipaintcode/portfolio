@@ -5,7 +5,6 @@ import './Card.css';
 
 const Card = (props) => {
   let topics = [];
-  // console.log('Card', props);
   if (props.topics && props.topics.length) {
     topics = props.topics.map(t => <li key={t}>{t.toUpperCase()}</li>);
   }
