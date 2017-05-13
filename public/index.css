@@ -26,7 +26,8 @@
 }
 
 body {
-  background-color: #DEDEDE;
+  background-color: #f1f3f3;
+  color: #626E73;
 }
 
 nav {
@@ -107,7 +108,7 @@ h4 {
   margin-top: 2em !important;
 }
 
-/* Development 
+/* Development
 section {
   outline: 1px solid black;
 } */
