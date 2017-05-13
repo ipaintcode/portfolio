@@ -32,6 +32,7 @@ body {
 
 nav {
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 nav img {
@@ -49,6 +50,7 @@ nav .name {
 nav h1 {
   color: #657075;
   font-size: 24px;
+  margin-bottom: 3px;
 }
 
 nav h4 {
@@ -64,6 +66,7 @@ h4 {
 .links {
   float: right;
   list-style: none;
+  font-size: 20px;
 }
 
 .links li {
