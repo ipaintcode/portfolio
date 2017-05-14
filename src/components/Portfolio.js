@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Preview from './Preview/Preview';
 import Card from './Card/Card';
-import base from '../base';
 import './Portfolio.css';
 
 const fetchGithubRepo = repo =>
@@ -23,7 +22,6 @@ class Portfolio extends Component {
     super(props);
     this.state = {
       repos: [],
-      github: [],
       selected: -1,
     };
     this.selectCard = this.selectCard.bind(this);
@@ -34,16 +32,8 @@ class Portfolio extends Component {
     const repos = repoNames.map(repo => fetchGithubRepo(repo));
     Promise.all(repos)
     .then((res) => {
-      this.setState({ github: res });
+      this.setState({ repos: res });
     });
-    this.ref = base.syncState('/repos', {
-      context: this,
-      state: 'repos',
-    });
-  }
-
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
   }
 
   selectCard(e) {
@@ -54,29 +44,20 @@ class Portfolio extends Component {
   }
 
   render() {
-    let children = [];
-    if (this.state.repos.length) {
-      children = this.state.repos.map((repo) => {
-        const github = this.state.github.find(gh => (gh.name === repo.name));
-        return (
-          <Card
-            key={repo.name}
-            repo={repo.name}
-            screenshot={repo.cardImage}
-            topics={github ? github.topics : []}
-            description={github ? github.description : []}
-            click={this.selectCard}
-          />);
-      });
-    }
+    const children = this.state.repos.map(repo =>
+      <Card
+        key={repo.name}
+        repo={repo.name}
+        // screenshot={repo.cardImage}
+        topics={repo ? repo.topics : []}
+        description={repo ? repo.description : []}
+        click={this.selectCard}
+      />,
+    );
 
     let preview = null;
     if ((this.state.selected >= 0) && this.state.repos.length) {
-      const github = this.state.github.find(gh =>
-        (gh.name === this.state.repos[this.state.selected].name),
-      );
-      const repo = Object.assign({}, this.state.repos[this.state.selected], github);
-      preview = <Preview repo={repo} />;
+      preview = <Preview repo={this.state.repos[this.state.selected]} />;
     }
 
     return (

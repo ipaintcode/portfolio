@@ -9,9 +9,18 @@ const Card = (props) => {
     topics = props.topics.map(t => <li key={t}>{t.toUpperCase()}</li>);
   }
 
+  let image = '';
+  switch (props.repo) {
+    case 'anikunchan': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494283259/Screen_Shot_2017-05-08_at_5.35.46_PM_ujgsri.png'; break;
+    case 'condictor': image = 'http://res.cloudinary.com/dk85nueap/image/upload/v1494649577/condictor_1_ytegvq.jpg'; break;
+    case 'referendus': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494639165/Screen_Shot_2017-05-12_at_8.32.11_PM_gkjp6c.png'; break;
+    case 'steam-battle': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494638837/Screen_Shot_2017-05-12_at_8.26.35_PM_bbfk1a.png'; break;
+    default:
+  }
+
   return (
     <section className="Card col-5">
-      <img src={props.screenshot} alt={props.repo} />
+      <img src={image} alt={props.repo} />
       <div className="card-title">{props.repo.toUpperCase()}</div>
       <div id={`${props.repo}-description`} className="description">
         {props.description}
