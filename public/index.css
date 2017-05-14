@@ -3,6 +3,16 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  /*vertical-align: middle;*/
+}
+
 [class*="col-"] {
   width: 100%;
   display: inline-block;
@@ -26,13 +36,13 @@
 }
 
 body {
-  background-color: #f1f3f3;
+  background-color: #657075;
   color: #626E73;
 }
 
 nav {
-  margin-left: 20px;
-  margin-right: 20px;
+  padding: 5px 20px;
+  background-color: white;
 }
 
 nav img {
@@ -79,9 +89,7 @@ h4 {
 }
 
 .profile {
-  background-color: #D2D3D3;
-  margin: 10px;
-  display: inline-block;
+  background-color: #fff;
 }
 
 .profile p {
@@ -91,7 +99,7 @@ h4 {
 }
 
 .info {
-  padding-left: 20px;
+  
 }
 
 .bio, .portrait {
@@ -103,7 +111,13 @@ h4 {
 }
 
 .portrait {
-  float: right;
+
+}
+
+.portrait img {
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
 }
 
 .footer {
