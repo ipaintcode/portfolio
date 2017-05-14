@@ -1,6 +1,10 @@
 .Preview {
-  width: 80%;
+  width: 820px;
   margin: 0 auto;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .Preview ul {
@@ -18,4 +22,10 @@
 .Preview strong {
   color: red;
   font-weight: normal;
+}
+
+.Preview p {
+  padding: 0px 40px;
+  text-align: left;
+  font-size: 14px;
 }
