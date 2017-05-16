@@ -1,5 +1,5 @@
 .Preview {
-  width: 820px;
+  max-width: 820px;
   margin: 0 auto;
   background-color: white;
   margin-top: 10px;
