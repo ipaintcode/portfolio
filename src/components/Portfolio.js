@@ -25,6 +25,7 @@ class Portfolio extends Component {
       selected: -1,
     };
     this.selectCard = this.selectCard.bind(this);
+    this.closePreview = this.closePreview.bind(this);
   }
 
   componentWillMount() {
@@ -46,6 +47,11 @@ class Portfolio extends Component {
     }
   }
 
+  closePreview() {
+    console.log('closing');
+    this.setState({ selected: -1 });
+  }
+
   render() {
     const children = this.state.repos.map(repo =>
       <Card
@@ -59,7 +65,7 @@ class Portfolio extends Component {
 
     let preview = null;
     if ((this.state.selected >= 0) && this.state.repos.length) {
-      preview = <Preview repo={this.state.repos[this.state.selected]} />;
+      preview = <Preview repo={this.state.repos[this.state.selected]} close={this.closePreview} />;
     }
 
     return (

@@ -20,7 +20,7 @@ const Preview = (props) => {
 
   return (
     <section className="Preview">
-      <button className="close" />
+      <button className="close" onClick={props.close} />
       {repo}
     </section>
   );
@@ -28,10 +28,12 @@ const Preview = (props) => {
 
 Preview.defaultProps = {
   repo: {},
+  close: () => {},
 };
 
 Preview.propTypes = {
   repo: PropTypes.object,
+  close: PropTypes.func,
 };
 
 export default Preview;
