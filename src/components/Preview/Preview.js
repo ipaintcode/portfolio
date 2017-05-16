@@ -20,6 +20,7 @@ const Preview = (props) => {
 
   return (
     <section className="Preview">
+      <button className="close" />
       {repo}
     </section>
   );

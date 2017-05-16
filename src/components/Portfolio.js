@@ -40,7 +40,10 @@ class Portfolio extends Component {
     e.preventDefault();
     const repo = e.target.dataset.repo;
     const index = this.state.repos.findIndex(r => (r.name === repo));
-    if (index >= 0) this.setState({ selected: index });
+    if (index >= 0) {
+      if (index === this.state.selected) this.setState({ selected: -1 });
+      else this.setState({ selected: index });
+    }
   }
 
   render() {
@@ -48,7 +51,6 @@ class Portfolio extends Component {
       <Card
         key={repo.name}
         repo={repo.name}
-        // screenshot={repo.cardImage}
         topics={repo ? repo.topics : []}
         description={repo ? repo.description : []}
         click={this.selectCard}
