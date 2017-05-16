@@ -28,12 +28,11 @@ const Preview = (props) => {
 
 Preview.defaultProps = {
   repo: {},
-  close: () => {},
 };
 
 Preview.propTypes = {
   repo: PropTypes.object,
-  close: PropTypes.func,
+  close: PropTypes.func.isRequired,
 };
 
 export default Preview;

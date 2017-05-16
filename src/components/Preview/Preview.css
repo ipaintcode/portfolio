@@ -19,10 +19,11 @@
   top: 5px;
   right: 5px;
 }
-
+ 
 .Preview .close:after {
   content: '✖'; /* UTF-8 symbol */
 }
+
 
 .Preview img {
   vertical-align: middle;

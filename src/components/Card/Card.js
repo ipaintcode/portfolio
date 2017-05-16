@@ -35,7 +35,6 @@ const Card = (props) => {
 
 Card.propTypes = {
   repo: PropTypes.string,
-  screenshot: PropTypes.string,
   topics: PropTypes.arrayOf(PropTypes.string),
   description: PropTypes.string,
   click: PropTypes.func,
