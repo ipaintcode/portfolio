@@ -11,16 +11,15 @@ import './Preview.css';
 const Preview = (props) => {
   let repo;
   switch (props.repo.name) {
-    case 'anikunchan': repo = <Anikunchan />; break;
-    case 'condictor': repo = <Condictor />; break;
-    case 'referendus': repo = <Referendus />; break;
-    case 'steam-battle': repo = <SteamBattle />; break;
+    case 'anikunchan': repo = <Anikunchan close={props.close} />; break;
+    case 'condictor': repo = <Condictor close={props.close} />; break;
+    case 'referendus': repo = <Referendus close={props.close} />; break;
+    case 'steam-battle': repo = <SteamBattle close={props.close} />; break;
     default: return null;
   }
 
   return (
     <section className="Preview">
-      <button className="close" onClick={props.close} />
       {repo}
     </section>
   );

@@ -2,7 +2,7 @@
 import React from 'react';
 import './Referendus.css';
 
-const Referendus = () => (
+const Referendus = props => (
   <section>
     <img src="https://cloud.githubusercontent.com/assets/18176333/22914304/5e6e4e3e-f235-11e6-8c51-b1622ae48f38.png" alt="Referendus" />
     <h1>Referendus</h1>
@@ -12,6 +12,7 @@ const Referendus = () => (
     <ul>
       <li><i className="fa fa-external-link" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://referendus.gilmoreg.com'}>Demo</a></li>
       <li><i className="fa fa-github" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://github.com/gilmoreg/referendus'}>Repo</a></li>
+      <li><button onClick={props.close}><i className="fa fa-times" aria-hidden="true" />Close</button></li>
     </ul>
   </section>
 );

@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Condictor.css';
 
-const Condictor = () => (
+const Condictor = props => (
   <section className="Condictor">
     <img src="http://res.cloudinary.com/dk85nueap/image/upload/v1494963896/condictor_montage_udqqmv.jpg" alt="Condictor" />
     <h1>Condictor</h1>
@@ -13,8 +14,13 @@ const Condictor = () => (
     <ul>
       <li><i className="fa fa-external-link" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://condictor.gilmoreg.com'}>Demo</a></li>
       <li><i className="fa fa-github" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://github.com/gilmoreg/condictor'}>Repo</a></li>
+      <li><button onClick={props.close}><i className="fa fa-times" aria-hidden="true" />Close</button></li>
     </ul>
   </section>
 );
+
+Condictor.PropTypes = {
+  close: PropTypes.func.isRequired,
+};
 
 export default Condictor;

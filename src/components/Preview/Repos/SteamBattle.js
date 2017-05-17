@@ -2,7 +2,7 @@
 import React from 'react';
 import './SteamBattle.css';
 
-const SteamBattle = () => (
+const SteamBattle = props => (
   <section>
     <img src="https://cloud.githubusercontent.com/assets/18176333/24309924/c9490b84-109b-11e7-8f7a-4d2e4ee1b365.png" alt="Steam Battle" />
     <h1>Steam Battle</h1>
@@ -14,6 +14,7 @@ const SteamBattle = () => (
     <ul>
       <li><i className="fa fa-external-link" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://steam-battle.gilmoreg.com'}>Demo</a></li>
       <li><i className="fa fa-github" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://github.com/gilmoreg/steam-battle'}>Repo</a></li>
+      <li><button onClick={props.close}><i className="fa fa-times" aria-hidden="true" />Close</button></li>
     </ul>
   </section>
 );

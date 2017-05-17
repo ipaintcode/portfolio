@@ -2,7 +2,7 @@
 import React from 'react';
 import './Anikunchan.css';
 
-const Anikunchan = () => (
+const Anikunchan = props => (
   <section>
     <img src="https://cloud.githubusercontent.com/assets/18176333/22078537/ed5b02da-dd7d-11e6-9a3a-21f8397af8b5.png" alt="Anikunchan" />
     <h1>Anikunchan</h1>
@@ -13,6 +13,7 @@ const Anikunchan = () => (
     <ul>
       <li><i className="fa fa-external-link" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://anikunchan.gilmoreg.com'}>Demo</a></li>
       <li><i className="fa fa-github" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://github.com/gilmoreg/anikunchan'}>Repo</a></li>
+      <li><button onClick={props.close}><i className="fa fa-times" aria-hidden="true" />Close</button></li>
     </ul>
   </section>
 );
