@@ -57,11 +57,10 @@ nav .name {
 nav h1 {
   color: #657075;
   font-size: 24px;
-  margin-bottom: 3px;
+  margin-bottom: 12px;
 }
 
 nav h4 {
-  margin: 0;
   color: #A7ACAE;
   font-size: 14px;
 }
@@ -70,13 +69,19 @@ h4 {
   margin: 0;
 }
 
+@media (min-width: 480px) {
+  nav h1 {
+    margin-bottom: 3px;
+  }
+}
+
 .links {
   float: none;
   list-style: none;
   font-size: 24px;
   color: black;
   margin: 0;
-  margin-left: 75px;
+  margin-left: 65%;
   margin-right: 5px;
   margin-top: -15px;
   padding: 0;
