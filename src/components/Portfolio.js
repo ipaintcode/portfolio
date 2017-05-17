@@ -37,6 +37,10 @@ class Portfolio extends Component {
     });
   }
 
+  componentDidMount() {
+    document.querySelector('body').classList.add('body-fade-in');
+  }
+
   selectCard(e) {
     e.preventDefault();
     const repo = e.target.dataset.repo;
