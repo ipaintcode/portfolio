@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Anikunchan.css';
 
 const Anikunchan = props => (
@@ -17,5 +18,9 @@ const Anikunchan = props => (
     </ul>
   </section>
 );
+
+Anikunchan.propTypes = {
+  close: PropTypes.func.isRequired,
+};
 
 export default Anikunchan;

@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Referendus.css';
 
 const Referendus = props => (
@@ -16,5 +17,9 @@ const Referendus = props => (
     </ul>
   </section>
 );
+
+Referendus.propTypes = {
+  close: PropTypes.func.isRequired,
+};
 
 export default Referendus;

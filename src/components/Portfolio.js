@@ -3,6 +3,8 @@ import Preview from './Preview/Preview';
 import Card from './Card/Card';
 import './Portfolio.css';
 
+require('smoothscroll-polyfill').polyfill();
+
 const fetchGithubRepo = repo =>
   fetch(`https://api.github.com/repos/gilmoreg/${repo}`, {
     headers: {
@@ -47,7 +49,10 @@ class Portfolio extends Component {
     const index = this.state.repos.findIndex(r => (r.name === repo));
     if (index >= 0) {
       if (index === this.state.selected) this.setState({ selected: -1 });
-      else this.setState({ selected: index });
+      else {
+        this.setState({ selected: index });
+        document.querySelector('#preview-container').scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 
@@ -77,7 +82,7 @@ class Portfolio extends Component {
         <section className="cards">
           {children[0]}
           {children[1]}
-          {(this.state.selected >= 0) ? preview : ''}
+          <div id="preview-container">{(this.state.selected >= 0) ? preview : ''}</div>
           {children[2]}
           {children[3]}
         </section>

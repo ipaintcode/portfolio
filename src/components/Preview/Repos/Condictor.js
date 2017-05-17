@@ -19,7 +19,7 @@ const Condictor = props => (
   </section>
 );
 
-Condictor.PropTypes = {
+Condictor.propTypes = {
   close: PropTypes.func.isRequired,
 };
 

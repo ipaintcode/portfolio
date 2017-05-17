@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './SteamBattle.css';
 
 const SteamBattle = props => (
@@ -18,5 +19,9 @@ const SteamBattle = props => (
     </ul>
   </section>
 );
+
+SteamBattle.propTypes = {
+  close: PropTypes.func.isRequired,
+};
 
 export default SteamBattle;
