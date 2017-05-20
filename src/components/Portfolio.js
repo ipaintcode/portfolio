@@ -57,9 +57,8 @@ class Portfolio extends Component {
   }
 
   closePreview() {
-    console.log('closing');
     this.setState({ selected: -1 });
-    document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.cards').scrollIntoView({ behavior: 'smooth' });
   }
 
   render() {
