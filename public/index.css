@@ -159,6 +159,19 @@ h4 {
   margin-bottom: 0;
 }
 
+/*
+  THREE COLUMN DIVS
+*/
+
+.threecolumn {
+  outline: 1px solid black;
+  width: 33%;
+  display: inline-block;
+}
+
+.threecolumn h4 {
+  text-align: center;
+}
 
 .skills {
   font-size: 14px;
