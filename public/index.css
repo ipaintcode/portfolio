@@ -57,7 +57,8 @@ nav .name {
 nav h1 {
   color: #657075;
   font-size: 24px;
-  margin-bottom: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 nav h4 {
