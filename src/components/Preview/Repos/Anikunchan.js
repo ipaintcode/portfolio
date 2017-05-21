@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Buttons from './Buttons';
 import './Anikunchan.css';
 
 const Anikunchan = props => (
@@ -11,11 +12,7 @@ const Anikunchan = props => (
     <p>By the time I finished the first version of this project, I was comfortable using <strong>JQuery</strong> and <strong>responsive design</strong>. I was also able to able to experiment with <strong>Flexbox</strong>.</p>
     <p>I later revisited this project with the benefit of having studied server side programming. I was always disturbed that my API keys were exposed in the source, so I leveraged the <strong>Serverless Framework</strong> with <strong>AWS Lamdba</strong> functions to proxy the API calls without exposing the keys. I was surprised at how easy the Serverless Framework makes it!</p>
     <p>With the benefit of hindsight, I noticed that I had been too aggressive in attempting to avoid reusing code. I introduced a great deal of complexity simply to avoid reusing about 10 lines of code. Lessons learned!</p>
-    <ul>
-      <li><i className="fa fa-external-link" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://anikunchan.gilmoreg.com'}>Demo</a></li>
-      <li><i className="fa fa-github" aria-hidden="true" /> <a target="_blank" rel="noopener noreferrer" href={'http://github.com/gilmoreg/anikunchan'}>Repo</a></li>
-      <li><button onClick={props.close}><i className="fa fa-times" aria-hidden="true" />Close</button></li>
-    </ul>
+    <Buttons close={props.close} repo={'anikunchan'} />
   </section>
 );
 
