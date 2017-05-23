@@ -184,6 +184,18 @@ h4 {
   margin-bottom: 10px;
 }
 
+.skill img {
+  width: 75px;
+}
+
+#mocha {
+  width: 58px;
+}
+
+#chai {
+  width: 50px;
+}
+
 .footer {
   font-size: 10px;
   margin-top: 2em !important;
