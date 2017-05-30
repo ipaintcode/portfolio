@@ -1,6 +1,6 @@
 .Portfolio {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  max-width: 1024px;
+  margin: 10px auto;
 }
 
 .cards {

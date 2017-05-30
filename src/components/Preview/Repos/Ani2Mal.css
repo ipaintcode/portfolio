@@ -1,6 +1,8 @@
 #reset {
   list-style: circle outside;
   margin: initial;
+  margin-left: 75px;
+  font-size: 14px;
 }
 
 #reset li {
@@ -10,5 +12,8 @@
   color: inherit;
   transform: initial;
   border: initial;
+}
 
+#node-topics {
+  text-align: left;
 }
