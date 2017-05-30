@@ -1,0 +1,14 @@
+#reset {
+  list-style: circle outside;
+  margin: initial;
+}
+
+#reset li {
+  display: block;
+  padding: initial;
+  background-color: initial;
+  color: inherit;
+  transform: initial;
+  border: initial;
+
+}

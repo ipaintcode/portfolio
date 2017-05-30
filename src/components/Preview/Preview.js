@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Anikunchan from './Repos/Anikunchan';
+import Ani2Mal from './Repos/Ani2Mal';
 import Condictor from './Repos/Condictor';
 import Referendus from './Repos/Referendus';
 import SteamBattle from './Repos/SteamBattle';
@@ -15,6 +16,7 @@ const Preview = (props) => {
     case 'condictor': repo = <Condictor close={props.close} />; break;
     case 'referendus': repo = <Referendus close={props.close} />; break;
     case 'steam-battle': repo = <SteamBattle close={props.close} />; break;
+    case 'ani2mal': repo = <Ani2Mal close={props.close} />; break;
     default: return null;
   }
 

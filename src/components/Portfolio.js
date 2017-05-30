@@ -31,7 +31,7 @@ class Portfolio extends Component {
   }
 
   componentWillMount() {
-    const repoNames = ['condictor', 'steam-battle', 'referendus', 'anikunchan'];
+    const repoNames = ['condictor', 'steam-battle', 'referendus', 'anikunchan', 'ani2mal'];
     const repos = repoNames.map(repo => fetchGithubRepo(repo));
     Promise.all(repos)
     .then((res) => {
@@ -85,6 +85,7 @@ class Portfolio extends Component {
           <div id="preview-container">{(this.state.selected >= 0) ? preview : ''}</div>
           {children[2]}
           {children[3]}
+          {children[4]}
         </section>
       </section>
     );

@@ -15,7 +15,8 @@ const Card = (props) => {
     case 'condictor': image = 'http://res.cloudinary.com/dk85nueap/image/upload/v1494649577/condictor_1_ytegvq.jpg'; break;
     case 'referendus': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494639165/Screen_Shot_2017-05-12_at_8.32.11_PM_gkjp6c.png'; break;
     case 'steam-battle': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494638837/Screen_Shot_2017-05-12_at_8.26.35_PM_bbfk1a.png'; break;
-    default:
+    case 'ani2mal': image = 'https://cloud.githubusercontent.com/assets/18176333/26568165/cb7a831a-44c6-11e7-8ee6-2f4e3b7e0e21.png'; break;
+    default: image = '';
   }
 
   return (
@@ -26,7 +27,7 @@ const Card = (props) => {
         {props.description}
       </div>
       <ul className="topics-list">
-        {topics}
+        {topics || ''}
       </ul>
       <button data-repo={props.repo} onClick={props.click}>Project Details</button>
     </section>
